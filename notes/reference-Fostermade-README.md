@@ -30,9 +30,19 @@ The base infrastructure includes the following resources:
 
 
 ---- BWF additional notes ---
-1) s3 env
-    source: s3://elasticbeanstalk-us-west-2-509573027517/dbp-api/env (zip file)
-    move to 
+1) s3 
+#copy from fostermade S3 to target account S3
+aws --profile fostermade       s3 cp s3://elasticbeanstalk-us-west-2-509573027517/dbp-api/env ~/git/dbp-phoenix/notes 
+aws --profile fostermade       s3 cp s3://elasticbeanstalk-us-west-2-509573027517/dbp-api/private.pem ~/git/dbp-phoenix/notes 
+aws --profile fostermade       s3 cp s3://elasticbeanstalk-us-west-2-509573027517/dbp-api/public.pem  ~/git/dbp-phoenix/notes 
+
+# dev-account-1
+aws --profile contrib-kh-admin s3 cp  ~/git/dbp-phoenix/notes/env          s3://elasticbeanstalk-us-east-2-627672411722/dbp-phoenix/dbp-api/env 
+aws --profile contrib-kh-admin s3 cp  ~/git/dbp-phoenix/notes/private.pem  s3://elasticbeanstalk-us-east-2-627672411722/dbp-phoenix/dbp-api/private.pem
+aws --profile contrib-kh-admin s3 cp  ~/git/dbp-phoenix/notes/public.pem   s3://elasticbeanstalk-us-east-2-627672411722/dbp-phoenix/dbp-api/public.pem
+
+
+
     potential changes required
         AWS_ARN_ROLE=arn:aws:iam::869054869504:role/api-node
         several AWS Secrets, which may need to move to DBP account
