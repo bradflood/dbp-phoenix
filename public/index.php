@@ -19,12 +19,17 @@
 */
 /* BWF added error reporting config */
 error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
-ini_set(‘error_log’, ‘/tmp/php.log’);
-error_log("This is an error log entry from index.php");
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
+ini_set("error_log", "/tmp/php.log");
 
+
+
+echo "Hello World";
+
+error_log("1. require autoload");
 require __DIR__.'/../bootstrap/autoload.php';
+error_log("1. done require autoload");
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +42,9 @@ require __DIR__.'/../bootstrap/autoload.php';
 | the responses back to the browser and delight our users.
 |
 */
-
+error_log("2. require once bootstrap/app");
 $app = require_once __DIR__.'/../bootstrap/app.php';
+error_log("2. done require once bootstrap/app");
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +57,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 | and wonderful application we have prepared for them.
 |
 */
+
+
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
@@ -60,3 +68,5 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
+error_log("99. done index.php");
