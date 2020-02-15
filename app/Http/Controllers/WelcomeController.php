@@ -6,6 +6,7 @@ class WelcomeController extends APIController
 {
     public function welcome()
     {
+        error_log("generating to error log from WelcomeController.php, function welcome");
         return view('welcome');
     }
 

@@ -26,10 +26,9 @@ ini_set("error_log", "/tmp/php.log");
 
 
 echo "Hello World";
+error_log("generating to error log from index.php");
 
-error_log("1. require autoload");
 require __DIR__.'/../bootstrap/autoload.php';
-error_log("1. done require autoload");
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +41,8 @@ error_log("1. done require autoload");
 | the responses back to the browser and delight our users.
 |
 */
-error_log("2. require once bootstrap/app");
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
-error_log("2. done require once bootstrap/app");
 
 /*
 |--------------------------------------------------------------------------
@@ -68,5 +66,3 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
-
-error_log("99. done index.php");
