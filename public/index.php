@@ -17,6 +17,11 @@
 | loading any of our classes later on. It feels nice to relax.
 |
 */
+/* BWF added error reporting config */
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+ini_set(‘error_log’, ‘/tmp/php.log’);
 
 require __DIR__.'/../bootstrap/autoload.php';
 
