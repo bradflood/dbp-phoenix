@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 ini_set(‘error_log’, ‘/tmp/php.log’);
-error_log(‘This is an error log entry from index.php’);
+error_log("This is an error log entry from index.php");
 
 require __DIR__.'/../bootstrap/autoload.php';
 
