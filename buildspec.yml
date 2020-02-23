@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       php: 7.3
-  post-build:
+  post_build:
     commands:
       - echo zip started on `date`
       - zip -x '.git*' -r dbp.zip .
