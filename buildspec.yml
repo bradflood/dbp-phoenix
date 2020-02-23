@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.3
+  post-build:
+    commands:
+      - echo zip started on `date`
+      - zip -x '.git*' -r dbp.zip .
+artifacts:
+  files:
+    - dbp.zip
