@@ -24,8 +24,6 @@ ini_set("display_startup_errors", 1);
 ini_set("error_log", "/tmp/php.log");
 
 
-
-echo "Hello World";
 error_log("generating to error log from index.php");
 
 require __DIR__.'/../bootstrap/autoload.php';
