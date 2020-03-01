@@ -1,13 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      php: 7.3
   post_build:
     commands:
-      - echo zip started on `date`
-      - zip -x '.git*' -r dbp.zip .
+      - echo no need to do anything, as zip is handled by external tooling
 artifacts:
   files:
-    - dbp.zip
+    - */*
