@@ -6,4 +6,4 @@ phases:
       - echo no need to do anything, as zip is handled by external tooling
 artifacts:
   files:
-    - */*
+    - "**/*"
