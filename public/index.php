@@ -23,7 +23,7 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 ini_set("error_log", "/tmp/php.log");
 
-echo "this change deployed to beanstalk by CICD process";
+echo "this change deployed to beanstalk by CICD process. March 6 1332";
 
 error_log("generating to error log from index.php");
 
